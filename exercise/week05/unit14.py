@@ -251,7 +251,7 @@ plt.figure(figsize = (10,5), dpi=300)
 plt.rc('font', family ='AppleGothic')
 plt.title(name +' 지역과 가장 비슷한 인구 구조를 가진 지역')
 plt.plot(home, label = name)
-for i in range(10):
+for i in range(5):
     plt.plot(result_list[i+1][1], label = result_list[i+1][0])
 
 plt.legend()
