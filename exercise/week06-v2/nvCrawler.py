@@ -5,8 +5,8 @@ import datetime
 import time
 import json
 
-client_id = '0LHQM4VX_MQM6JfkXofa'
-client_secret = 'OcPgqpswCg'
+client_id = 'LBo2JT7AQn4mXtyb3EEB'
+client_secret = 'xXRoXIpERC'
 
 
 # [CODE 1]
