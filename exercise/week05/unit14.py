@@ -260,6 +260,53 @@ plt.show()
 
 # In[ ]:
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. 데이터를 읽어온다.
+df = pd.read_csv('age.csv', encoding='cp949')
+
+# 2. 궁금한 지역의 이름을 입력받는다.
+name = input('인구 구조가 알고 싶은 지역의 이름(읍면동 단위)을 입력해주세요 : ')
+
+# 3. 입력받은 지역의 인구 구조 가져오기
+target_row = df[df['행정구역'].str.contains(name)].iloc[0]
+hometotal = target_row[2]
+home = target_row[3:].astype(int) / int(hometotal)
+
+# 4. 모든 지역과 비교하여 유사도 계산
+def calculate_similarity(row):
+    total = row[2]
+    away = row[3:].astype(int) / int(total)
+    s = np.sum((home - away) ** 2)
+    return s
+
+df['유사도'] = df.apply(calculate_similarity, axis=1)
+df_sorted = df.sort_values(by='유사도')
+
+# 5. 시각화
+plt.style.use('ggplot')
+plt.figure(figsize=(10, 5), dpi=300)
+plt.rc('font', family='AppleGothic')
+plt.title(f'{name} 지역과 가장 비슷한 인구 구조를 가진 지역')
+plt.plot(home.values, label=name)
+
+# 가장 비슷한 상위 5개 지역 시각화 (자기 자신 제외)
+count = 0
+for _, row in df_sorted.iterrows():
+    region_name = row['행정구역']
+    if name in region_name:
+        continue
+    total = row[2]
+    away = row[3:].astype(int) / int(total)
+    plt.plot(away.values, label=region_name)
+    count += 1
+    if count == 5:
+        break
+
+plt.legend()
+plt.show()
 
 
 

@@ -102,7 +102,7 @@ plt.show()
 
 # 동이름 입력 받기... Uchang
 import csv
-f = open('age.csv')
+f = open('age.csv', encoding='cp949')
 data = csv.reader(f)
 result = []
 dong=input('동 이름 입력...=>')
