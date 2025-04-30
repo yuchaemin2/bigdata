@@ -62,6 +62,9 @@ lemma = WordNetLemmatizer()
 
 # In[8]:
 # 아래 2문장이 필요함 import nltk, nltk.download('omw-1.4')
+# import nltk
+# nltk.download('punkt')
+
 import nltk
 nltk.download('omw-1.4')
 words = []  

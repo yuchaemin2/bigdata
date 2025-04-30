@@ -86,6 +86,7 @@ len(CB_geoData) #확인용 출력
 
 # In[12]:
 map_CB = folium.Map(location=[37.560284, 126.975334], zoom_start = 15)
+map_CB = folium.Map(location=[37.652078, 127.016443], zoom_start = 15)
 
 # In[13]:
 for i, store in CB_geoData.iterrows():   

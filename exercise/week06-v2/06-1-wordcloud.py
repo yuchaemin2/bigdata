@@ -19,6 +19,9 @@ import pandas as pd
 # 한글 폰트 패스로 지정
 import re
 import nltk
+
+import jpype
+
 from konlpy.tag import Okt; t = Okt()
 
 stop_words = [')','?','1','"(', '_', ')/','\n','.',',', '<','!','(','(', '??','..', '4', '|', '>', '?(', '"…', '#', '&', '・', "']",'.',' ','/',"'",'’','”','“','·', '[','!','\n','·','‘','"','\n ',']',':','…',')','(','-', 'nan','가','요','답변','...','을','수','에','질문','제','를','이','도',
@@ -68,7 +71,7 @@ plt.show()
 
 # 그래프에서 한글 폰트 깨지는 문제에 대한 대처(전역 글꼴 설정)
 from matplotlib import font_manager, rc
-font_name = font_manager.FontProperties(fname='c:/Windows/Fonts/malgun.ttf').get_name()
+font_name = font_manager.FontProperties(fname='/System/Library/Fonts/Supplemental/AppleGothic.ttf').get_name()
 rc('font', family=font_name)
 
 data = ko.vocab().most_common(300)
@@ -81,7 +84,7 @@ def todict(list_tuple):
         todict[data[i][0]] = data[i][1]
     return todict
 # 워드클라우드를 그려보자
-wordcloud = WordCloud(font_path='c:/Windows/Fonts/malgun.ttf',   # 'c:/Windows/Fonts/malgun.ttf'
+wordcloud = WordCloud(font_path='/System/Library/Fonts/Supplemental/AppleGothic.ttf',   # 'c:/Windows/Fonts/malgun.ttf'
                       relative_scaling = 0.2,
                       #stopwords=STOPWORDS,
                       background_color='white',
