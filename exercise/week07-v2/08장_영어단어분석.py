@@ -24,6 +24,17 @@ from collections import Counter
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 
+import nltk
+nltk.data.path.append('/Users/chaemin/nltk_data')  # 직접 경로 설정
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('omw-1.4')
+
+
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+
 
 # # 1. 데이터 준비
 # ### 1-1. 파일 병합
@@ -57,6 +68,9 @@ all_title #출력하여 내용 확인
 # import nltk
 # nltk.download('punkt')    # 해보고 안되면 다음 명령어 실행
 # nltk.download('all')      # 5분 이상 소요됨
+import nltk
+nltk.download('stopwords')
+
 stopWords = set(stopwords.words("english"))
 lemma = WordNetLemmatizer()
 

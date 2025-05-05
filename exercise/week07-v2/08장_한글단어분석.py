@@ -85,8 +85,8 @@ for tag, counts in count.most_common(80):
 # In[7]:
 
 
-font_path = "c:/Windows/fonts/malgun.ttf"
-font_name = font_manager.FontProperties(fname = font_path).get_name()
+font_path = '/System/Library/Fonts/AppleGothic.ttf'  # 또는 사용 가능한 다른 경로
+font_name = "AppleGothic"
 matplotlib.rc('font', family=font_name)
 
 

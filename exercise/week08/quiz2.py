@@ -1,8 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun May  4 16:40:29 2025
 
-# # 9장. 지리 정보 분석 (2) 행정구역별 데이터 분석 + 블록맵
-# # 1. 데이터 준비 및 탐색
+@author: chaemin
+"""
+
 # In[1]:
 import pandas as pd
 pd.set_option('mode.chained_assignment',  None) # Warning 방지용
@@ -171,12 +174,11 @@ from matplotlib import rcParams, style
 style.use('ggplot')
 
 from matplotlib import font_manager, rc
-
-
-font_path = '/System/Library/Fonts/AppleGothic.ttf'  # 또는 사용 가능한 다른 경로
 font_name = "AppleGothic"
-
 rc('font', family=font_name)
+
+
+
 
 # ####   (1) 행정구역별 공공보건의료기관수에 대한 바 차트 
 # In[37]:
@@ -201,7 +203,7 @@ import os
 path = os.getcwd()
 
 # In[40]:
-data_draw_korea = pd.read_csv(path+'./DATA/data_draw_korea.csv', index_col=0, encoding='UTF-8', engine='python')
+data_draw_korea = pd.read_csv(path+'/DATA/data_draw_korea.csv', index_col=0, encoding='UTF-8', engine='python')
 data_draw_korea.head()   #작업 확인용 출력
 
 # ###   (2) 블록맵 데이터 파일에 '시도군구' 컬럼 만들기
