@@ -22,7 +22,7 @@ y_test = iris.target[-30:] # test target data
 #RandomForestClassifier libary를 import
 from sklearn.ensemble import RandomForestClassifier # RandomForest
 #tree 의 개수 Random Forest 분류 모듈 생성
-rfc = RandomForestClassifier(n_estimators=10) 
+rfc = RandomForestClassifier(n_estimators=20) 
 rfc
 rfc.fit(x_train, y_train)
 #Test data를 입력해 target data를 예측 

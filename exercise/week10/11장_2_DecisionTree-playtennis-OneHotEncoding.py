@@ -6,7 +6,7 @@ from IPython.display import Image
 import pandas as pd
 import numpy as np
 
-tennis_data = pd.read_csv('playtennis.csv')
+tennis_data = pd.read_csv('play_tennis.csv')
 tennis_data
 df=tennis_data
 
